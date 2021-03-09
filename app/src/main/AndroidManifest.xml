@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.assignment1.hope">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.Hope">
+        <activity android:name=".CommunitybuttonActivity"></activity>
+        <activity android:name=".EducationbuttonActivity" />
+        <activity android:name=".FinancebuttonActivity" />
+        <activity android:name=".Clickbutton" />
+        <activity
+            android:name=".navigatebarActivity2"
+            android:label="@string/title_activity_navigatebar2"
+            android:theme="@style/Theme.Hope.NoActionBar" /> <!-- added splash style to remove title -->
+        <activity
+            android:name=".MainActivity"
+            android:theme="@style/splash">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

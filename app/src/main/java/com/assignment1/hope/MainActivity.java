@@ -1,0 +1,43 @@
+package com.assignment1.hope;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.content.Intent;
+import android.os.Bundle;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
+import android.widget.ImageView;
+
+public class MainActivity extends AppCompatActivity {
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        ImageView imageView = findViewById(R.id.imageView);
+        Animation animation = AnimationUtils.loadAnimation(getApplicationContext(),R.anim.splashanimation);
+        imageView.startAnimation(animation);
+
+
+        Thread timer = new Thread(){
+            @Override
+            public void run() {
+
+                try{
+                    sleep(8000);
+                    Intent intent = new Intent(getApplicationContext(), navigatebarActivity2.class);
+                    startActivity(intent);
+                    finish();
+                    super.run();
+
+                } catch (InterruptedException e){
+                    e.printStackTrace();
+                }
+
+
+            }
+        };
+        timer.start();
+    }
+}
